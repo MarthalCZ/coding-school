@@ -1,14 +1,31 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #3c5bfa;
+    --secondary-color: #161616;
+    --tertiary-color: #F0F0F0;
+    --quarternary-color: #00BA88;
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: var(--secondary-color);
 }
 
+img {
+    max-width: 100%;
+}
+
+nav,
 menu,
 ul,
 ol {
@@ -27,11 +44,17 @@ a {
 /* LAYOUT */
 body {
     position: relative;
-    width: 75%;
+    width: 100%;
     height: 100vh;
-    min-width: 640px;
-    padding: 3rem;
+    min-width: 602px;
     margin: auto;
+}
+
+.header--general {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    background: var(--primary-color);
 }
 
 .vertical-center {
@@ -40,84 +63,278 @@ body {
     left: 0;
     bottom: 0;
     right:0;
+    width: max-content;
     height: max-content;
     margin: auto;
 }
 
-.login {
-    width: 25%;
-    margin: auto;
-    margin-bottom: 1rem;
-    padding: 3rem;
-    text-align: center;
-    background: dodgerblue;
-    border-radius: 2rem;
+.main--login,
+.main--register,
+.main--dashboard {
+    width: 100%;
 }
 
-#login {
+.login,
+.modal {
+    max-width: 502px;
+    margin: auto;
+    padding: 1.5rem;
+    border: 3px solid var(--tertiary-color);
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 16px 0 #0000000A;
+
+    h1 {
+        width: max-content;
+        margin: auto;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: #161616;
+    }
+}
+
+.login__form,
+.modal__form {
     display: flex;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#login label,
-#login input {
-    display: block;
-    margin: auto;
+::placeholder {
+    color: #B6B6B6;
+    font-family: Montserrat;
+    font-weight: 500;
 }
 
-#login label {
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-#login label + input {
-    margin-bottom: 1.25rem;
-}
-
-#login input,
-#login button {
+input {
     width: 100%;
+    height: 4rem;
+    margin-bottom: 1rem;
     padding: 0 1rem;
-    line-height: 2rem;
-    font-size: 1.25rem;
-    text-align: center;
-    border: none;
+    text-align: left;
+    border: 3px solid transparent;
     border-radius: 1rem;
+    background: var(--tertiary-color);
+    font-family: Montserrat;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-#login input:focus {
-    outline: 3px solid mediumturquoise;
-}
-
-#login input[type="submit"],
-#login button {
-    display: inline-block;
-    max-width: 45%;
-    min-width: max-content;
-    margin: 0;
-    margin-top: 1rem;
+input:focus {
+    border-color: var(--primary-color);
     outline: none;
-    cursor: pointer;
-    color: #000000;
-    background: #ffffff;
 }
 
-#login input[type="submit"]:hover,
-#login button:hover {
-    color: #ffffff;
-    background: mediumturquoise;
-}
-
-#sign-up {
-    margin: 0 -0.25rem;
-    padding: 0 0.25rem;
-    border-radius: 0.5rem;
+input[type="submit"],
+button {
+    display: inline-block;
+    width: 48.5%;
+    margin: 0;
+    outline: none;
+    border: 3px solid transparent;
+    border-radius: 1rem;
+    background: #3c5bfa;
+    color: #F0F0F0;
+    text-align: center;
+    font-size: 1.25rem;
     font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
 }
 
-#sign-up:hover {
-    background: mediumturquoise;
+input[type="submit"]:hover,
+button:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: var(--tertiary-color);
+    transition: all 0.25s;
 }
+
+.login__info {
+    width: max-content;
+    margin: auto;
+    margin-top: 1.5rem;
+    
+    p {
+        display: inline-block;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+
+    a {
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+     }
+}
+
+.nav--todo,
+.nav--done {
+    display: flex;
+    position: relative;
+    max-width: 906px;
+    height: max-content;
+    margin: auto;
+    margin-top: 6rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    list-style-type: none;
+    font-size: 0;
+
+    li {
+        display: inline-block;
+        font-size: 2rem;
+
+        &:last-of-type {
+            margin-left: auto;
+        }
+    }
+
+    a {
+        display: inline-block;
+        width: 160px;
+        height: 4rem;
+        line-height: 3.5rem;
+        border: 3px solid transparent;
+        border-radius: 2rem;
+        background: transparent;
+        color: var(--tertiary-color);
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--tertiary-color);
+            border-color: var(--primary-color);
+        }
+    }
+
+    button {
+        width: 250px;
+        height: 64px;
+
+        &::after {
+            margin-left: 0.5rem;
+            content: "+";
+        }
+    }
+}
+
+.nav--todo #todo {
+        color: #3c5bfa;
+        background-color: var(--tertiary-color);
+        pointer-events: none;
+}
+
+.nav--done #done {
+    color: #3c5bfa;
+    background-color: var(--tertiary-color);
+    pointer-events: none;
+}
+
+.tasklist {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    max-width: 906px;
+    margin: auto;
+    margin-top: 3rem;
+
+}
+
+.tasklist__task--todo,
+.tasklist__task--done {
+    display: grid;
+    grid-template-areas: 
+    "h2 button"
+    "p button"
+    ;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 82px;
+    padding: 0 1rem;
+    border: 3px solid var(--tertiary-color);
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 16px 0 #0000000A;
+
+    h2 {
+        grid-area: h2;
+        font-size: 1.75rem;
+        color: var(--secondary-color);
+    }
+
+    p {
+        grid-area: p;
+        font-weight: 500;
+        color: #676767;
+
+        &::before {
+            content: "until";
+            margin-right: 0.5rem;
+        }
+    }
+
+    button {
+        grid-area: button;
+        width: 100px;
+        height: 2.25rem;
+        border-radius: 0.5rem;
+        background-color: var(--quarternary-color);
+        font-size: 1rem;
+        font-weight: 600;
+
+        &:hover {
+            color: var(--quarternary-color);
+            border-color: var(--quarternary-color);
+            background-color: var(--tertiary-color);
+        }
+    }
+}
+
+
+
+.tasklist__task--done {
+    h2 {
+        text-decoration: line-through;
+    }
+
+    p::before {
+        content: "finished";
+        margin-right: 0.5rem;
+    }
+}
+
+/* Modal */
+.modal {
+    z-index: 10;
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 60%;
+}
+

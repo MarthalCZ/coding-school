@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="">
+    <title>ToDo</title>
+</head>
+<body>
+    <header class="header--general">
+        
+    </header>
+        <main class="main--dashboard">
+            <nav class="nav--todo" role="navigation">
+                <li><a id="todo" href="todo.html">To do</a></li>
+                <li><a id="done" href="done.html">Done</a></li>
+                <li><button id="new-task">New task</button></li>
+            </nav>
+            <ul class="tasklist">
+                <li class="tasklist__task--todo">
+                    <h2>Buy groceries</h2>
+                    <p>21.4.2024</p>
+                    <button class="done-button">Done</button>
+                </li>
+                <li class="tasklist__task--todo">
+                    <h2>Clean the toilet</h2>
+                    <p>21.4.2024</p>
+                    <button class="done-button">Done</button>
+                </li>
+            </ul>
+        </main>
+        <footer>
+
+        </footer>
+        <dialog class="modal vertical-center">
+            <h1>New task</h1>
+            <form class="modal__form" action="" method="dialog">
+                <input id="task" name="task" type="text" placeholder="Task" required>
+                <input id="deadline" name="deadline" type="date" placeholder="Deadline" required>
+                <input id="create" type="submit" value="Create task">
+            </form>
+        </dialog>
+        <script src="script.js"></script>
+</body>
+</html>

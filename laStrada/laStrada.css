@@ -1,5 +1,4 @@
 /* FONTS */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
@@ -90,6 +89,7 @@ hr {
     bottom: 1rem;
     right: 1rem;
     overflow: hidden;
+    z-index: 10;
 }
 
 .scroll-top__btn {
@@ -324,7 +324,7 @@ header {
    flex-wrap: nowrap;
    flex-basis: 50%;
    row-gap: 2rem;
-   min-width: 256px;
+   min-width: 512px;
    padding: 1.5rem;
 
    p {
@@ -407,7 +407,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 632px;
+    height: auto;
     justify-content: center;
     align-items: center;
 }
@@ -417,7 +417,7 @@ header {
     position: relative;
     flex-basis: 25%;
     min-width: 256px;
-    height: 100%;
+    min-height: 632px;
     overflow: hidden;
     flex-grow: 1;
 
@@ -451,7 +451,7 @@ header {
         min-height: 100%;
         transform: translate(-50%,-50%);
         z-index: -1;
-    }
+        }
 
     h2 {
         display: block;
@@ -473,9 +473,15 @@ header {
     transition: all 0.25s ease-in-out;
 }
 
-.menu-gallery__card:hover a {
-    background-color:#F4433640;
-    transition: all 0.25s ease-in-out;
+.menu-gallery__card:hover a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--quarternary-color);
+    opacity: 25%;
 }
 
 /* CUSTOMER REVIEW PANEL*/
@@ -505,7 +511,8 @@ header {
 
 .customer-review__card {
     flex-basis: 31%;
-    height: 100%;
+    min-width: 320px;
+    height: auto;
     padding: 2.5rem 3.5rem;
     text-align: center;
     background: #ffffff;
@@ -572,7 +579,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    min-height: 662px;
+    justify-content: center;
 }
 
 .invitation__column {
@@ -582,6 +589,8 @@ header {
     flex-wrap: nowrap;
     flex-basis: 50%;
     max-width: 50%;
+    min-width: 512px;
+    min-height: 662px;
     padding: 6rem;
     justify-content: space-evenly;
     overflow: hidden;
@@ -590,6 +599,7 @@ header {
         position: absolute;
         top: 0;
         left: 0;
+        min-height: 100%;
     }
 
     h2 {
@@ -630,9 +640,11 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     max-width: var(--content-width);
-    height: 100%;
+    height: auto;
     margin: auto;
-    padding: 3rem 0;
+    padding: 2rem 0;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .footer-info__block {
@@ -657,7 +669,7 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    p a:hover {
+    a:hover {
         text-decoration: underline;
     }
 
@@ -669,8 +681,8 @@ footer {
         width: 180px;
     }
 
-    img + img {
-        margin-top: 2rem;
+    a + a {
+        margin-top: 1.5rem;
     }
 }
 
@@ -692,27 +704,30 @@ footer {
 
 /* WEB INFO PANEL*/
 .web-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: block;
+    width: 100%;
     min-height: 150px;
+    padding: 3rem;
     background: #232628;
 
     .web-info__container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: var(--content-width);
+        max-width: var(--content-width);
         justify-content: flex-start;
         align-items: center;
-        margin: auto;
-        
+        margin: 0 auto;
     }
 
-    a {
+    a { 
+        display: block;
         flex-basis: 33.33%;
         color: var(--tertiary-color);
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     img {

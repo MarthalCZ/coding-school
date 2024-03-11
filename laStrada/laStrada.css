@@ -176,7 +176,32 @@ header {
         text-align: center;
 
         .main-menu {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid var(--tertiary-color);
+        background: var(--primary-color);
+        font-family: "Playfair Display";
+        text-transform: none;
+        z-index: 10;
+
+            &::before {
+                content: "Menu ☰";
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-self: flex-end;
+                padding: 1rem;
+                font-weight: 700;
+            }
+
+            li {
+                display: none;
+            }
         }
     }
 }

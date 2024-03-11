@@ -158,6 +158,29 @@ header {
     overflow: hidden;
 }
 
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 0 3rem;
+    }
+
+    .logo {
+        margin-top: 5em;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+
+        .main-menu {
+        display: none;
+        }
+    }
+}
+
 /* LOGO */
 
 .logo {
@@ -257,6 +280,22 @@ header {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .hero-panel {
+        top: 33.5%;
+        
+        h1 {
+            line-height: 3rem;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 3.5rem;
+            font-size: 2.5rem;
+        }
+    }
+}
+
 /* PERK PANEL */
 
 .restaurant-perks {
@@ -281,7 +320,7 @@ header {
 
 .restaurant-perks__perk {
     flex-basis: 25%;
-    min-width: 256px;
+    min-width: 290px;
     padding: 1rem;
     text-align: center;
     color: var(--secondary-color);
@@ -298,6 +337,12 @@ header {
     p::after {
         content: "...";
         margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .restaurant-perks__perk {
+        min-width: 320px;
     }
 }
 
@@ -343,7 +388,7 @@ header {
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
-    min-width: 256px;
+    min-width: 320px;
     padding: 1.5rem;
 
     h2 {
@@ -353,13 +398,14 @@ header {
 
 .menu__food-item {
     display: grid;
-    grid-template-columns: 9fr 1fr;
+    grid-template-columns: 1fr 50px;
     grid-template-areas:
     "heading heading"
     "name price"
     "separator separator"
     ;
     column-gap: 1rem;
+    align-items: center;
 
     h3 {
         grid-area: heading;
@@ -400,6 +446,17 @@ header {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .restaurant-info__welcome {
+        min-width: 320px;
+        padding: 1rem;
+    }
+
+    .restaurant-info__links {
+        text-align: center;
+    }
+}
+
 /* CARD MENU PANEL */
 
 .menu-gallery {
@@ -416,7 +473,7 @@ header {
     display: block;
     position: relative;
     flex-basis: 25%;
-    min-width: 256px;
+    min-width: 320px;
     min-height: 632px;
     overflow: hidden;
     flex-grow: 1;
@@ -534,6 +591,21 @@ header {
     }
 }
 
+@media only screen and (max-width: 768px) {
+.customer-reviews {
+    padding: 2rem 0;
+}
+
+    .customer-reviews__container {
+        row-gap: 1.5rem;
+    }
+
+    .customer-review__card {
+        padding: 2rem;
+    }
+    
+}
+
 /* RESERVATION PANEL */
 
 .reservation {
@@ -541,26 +613,22 @@ header {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 532px;
+    min-height: 532px;
     background-image: url(images/reservation.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    h2, p, .button--primary {
-        display: block;
-        width: max-content;
-        margin: 0 auto;
-    }
-
     h2,
     p {
-        color: var(--tertiary-color);
-        font-size: 3.75rem;
-        text-shadow: 1px 1px 2px var(--primary-color);
         line-height: 5rem;
+        font-size: 3.75rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px var(--primary-color);
+        color: var(--tertiary-color);
     }
 
     p:first-of-type {
@@ -570,6 +638,14 @@ header {
 
     .button--primary {
         margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .reservation h2,
+    .reservation p {
+        line-height: 4rem;
+        font-size: 2.75rem;
     }
 }
 
@@ -597,8 +673,9 @@ header {
 
     img {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         min-height: 100%;
     }
 
@@ -621,6 +698,25 @@ header {
             &:hover {
                 color: var(--quarternary-color);
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .invitation__column {
+        flex-basis: 100%;
+        min-width: 320px;
+        margin-top: 2rem;
+        padding: 1rem;
+        row-gap: 1.5rem;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .button--primary {
+            align-self: center;
+            margin-bottom: 1.5rem;
         }
     }
 }
@@ -654,7 +750,7 @@ footer {
     justify-content: flex-start;
     line-height: 2rem;
     flex-basis: 33.33%;
-    min-width: 256px;
+    min-width: 320px;
     height: 100%;
     padding: 2rem;
     overflow: hidden;
@@ -702,6 +798,19 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 768px) {
+    .footer-info__block {
+        flex-basis: 100%;
+        align-items: center;
+        text-align: center;
+
+        .footer-info__contact {
+            grid-template-columns: max-content 130px;
+            text-align: left;
+        }
+    }
+}
+
 /* WEB INFO PANEL*/
 .web-info {
     display: block;
@@ -715,7 +824,7 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         max-width: var(--content-width);
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         margin: 0 auto;
     }
@@ -731,6 +840,17 @@ footer {
     }
 
     img {
-        width: 200px;
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .web-info__container {
+        row-gap: 1.25rem;
+
+        a {
+            flex-basis: 100%;
+            text-align: center;
+        }
     }
 }

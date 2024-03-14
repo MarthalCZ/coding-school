@@ -1,11 +1,4 @@
-# Learning project
-Blog  postavený na PHP s pomocí architektury MVC + REST.
-
-## MVC
-Tady bude vysvětlení MVC architektury.
-
-## REST
-Tady bude vysvětlení REST architektury.
+# Coding School
 
 ## README
 Tady je vysvětlení psaní README souboru.
@@ -27,6 +20,7 @@ Blok kódu
 
  ## Dobré zdroje informací
  - mdn – výpis z oficiální dokumentace programovacích jazyků
+ - php – oficiální dokumentace a manuál k php
  - codepen – sdílení kontkrétních ukázek kódu s editorem
  - stackoverflow – největší diskuzní stránka o programování
 

@@ -17,7 +17,9 @@
                 <h1>Login</h1>
                 <form class="login__form" action="todo.html" method="#">
                     <input id="email" name="email" type="email" placeholder="Email" maxlength="64" required>
+                    <div class="error" id="email-error">Email must contain @ symbol. </div>
                     <input id="password" name="password" type="password" placeholder="Password" maxlength="64" required>
+                    <div class="error" id="password-error">Password must be at least eight characters long.</div>
                     <button id="show-password">Show password</button>
                     <input type="submit" value="Sign in">
                 </form>

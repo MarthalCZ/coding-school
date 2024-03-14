@@ -405,7 +405,7 @@ input:focus {
 
 .article-likes::before {
 display: inline-block;
-content: url(/vence/heart.svg);
+content: url(/images/heart.svg);
 width: 12px;
 height: 12px;
 margin-right: 0.5rem;

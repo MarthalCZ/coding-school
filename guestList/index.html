@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Seznam hostů</title>
+</head>
+<body>
+    <main>
+        <h1>Seznam hostů</h1>
+        <form id="form-input" action="">
+            <input id="first-input" type="name" name="firstName" placeholder="Jméno" maxlength="16" pattern="\p{L}+" required>
+            <input id="last-name" type="name" name="lastName" placeholder="Příjmení" maxlength="32" pattern="\p{L}+" required>
+            <select id="phone-prefix" form="form-input"  name="phonePrefix">
+                <option value="+420">+420</option>
+                <option value="+420">+421</option>
+            </select>
+            <input id="phone-number" type="tel" name="phoneNumber" placeholder="Telefon" maxlength="11" pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
+            <input type="submit" value="Přidat">
+            <button type="button" onclick="removeLast()">Vymazat poslední</button>
+            <button type="button" onclick="removeAll()">Vymazat vše</button>
+        </form>
+        <span id="item-count"></span>
+        <ul id="form-data"></ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

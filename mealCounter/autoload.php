@@ -1,12 +1,22 @@
 <?php
 
+// Register an autoloader function using spl_autoload_register
 spl_autoload_register(function ($class) {
-	$prefix = '';
-	$base_dir = __DIR__ . "/";
-	$class_name = str_replace($prefix, '', $class);
-	$file = $base_dir . str_replace('\\', '/', $class_name) . '.php';
+    // Define the prefix (unused in this case)
+    $prefix = '';
 
-	if (file_exists($file)) {
-		require $file;
-	}
+    // Set the base directory to the current directory
+    $base_dir = __DIR__ . "/";
+
+    // Remove the prefix from the class name
+    $class_name = str_replace($prefix, '', $class);
+
+    // Construct the file path for the class
+    $file = $base_dir . str_replace('\\', '/', $class_name) . '.php';
+
+    // Check if the class file exists
+    if (file_exists($file)) {
+        // If the file exists, require (include) it
+        require $file;
+    }
 });

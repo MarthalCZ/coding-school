@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Martin Pospíšil">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="prefetch" href="/images/logo.png">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/fonts.css">
-    <link rel="stylesheet" href="/styles/queries.css">
-    <title>MealCounter</title>
-</head>
+<?php Core\View::render('head')?>
 <body>
-    <header class="header--logged-in">
-        <a class="logo" href="/index.php">
-            <img class="logo__image" src="/images/logo.png" alt="Logo">
-            <h1 class="logo__title" aria-label="title">MealCounter</h1>
-        </a>
-        <nav class="nav" role="navigation">
-            <menu class="nav__main-menu" aria-label="Hlavní menu">
-                <li class="nav__main-menu-item"><a class="global-button global-button--menu" href="/views/my-meal-plan.html">Můj jídelníček</a></li>
-                <li class="nav__main-menu-item"><a class="global-button global-button--menu" href="/views/my-meals.html">Moje jídla</a></li>
-                <li class="nav__main-menu-item"><a class="global-button global-button--menu" href="/views/my-ingredients.html">Moje Ingredience</a></li>
-                <li class="nav__main-menu-item"><a class="global-button global-button--menu" href="/views/meal-counter.html">Počítadlo jídel</a></li>
-            </menu>
-            <menu class="nav__account-menu" aria-label="Menu účtu">
-                <li class="nav__account-menu-item"><a class="global-button global-button--menu" href="/views/my-account.html">Můj účet</a></li>
-                <li class="nav__account-menu-item"><a class="global-button global-button--menu" href="/views/login.html">Odhlásit</a></li>
-            </menu>
-        </nav>
-        <menu class="switches" aria-label="Menu módu a jazyka">
-            <label class="global-switch" for="mode" aria-label="Přepnout denní / noční mód">
-                <input class="global-switch__input" id="mode" name="mode" type="checkbox">
-                <div class="global-switch__slider"></div>
-            </label>
-            <label class="global-switch" for="lang" aria-label="Přepnout český / anglický jazyk">
-                <input class="global-switch__input" id="lang" name="lang" type="checkbox">
-                <div class="global-switch__slider"></div>
-            </label>
-        </menu>
-    </header>
+    <?php Core\View::render('header-1')?>
     <main class="main main--general">
+        <div class="sub-nav">
+            <menu class="sub-nav__menu">
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="meal-counter">Jídlo</a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="ingredient-counter">Ingredience</a></li>
+            </menu>
+        </div>
         <section class="my-ingredients">
-            <h1 class="my-ingredients__header">Moje ingredience</h1>
+            <h1 class="my-ingredients__header">Nové jídlo</h1>
+            <div class="meal-counter__stats">
+                <span class="meal-counter__stats-name">
+                    <input class="meal-counter__stats-name-input" id="name" name="name" type="text" placeholder="Název jídla" aria-label="Zadejte název jídla">
+                </span>
+                <span class="meal-counter__stats-weight" id="weight">0</span>
+                <span class="meal-counter__stats-spacer"></span>
+                <span class="meal-counter__stats-energy">
+                    <input class="meal-counter__stats-energy-input" id="energy" name="energy" type="number" min="0" placeholder="Energie" aria-label="Zadejte energetickou hodnotu">
+                </span>
+                <span class="meal-counter__stats-ratio" id="ratio">0</span>
+                <span class="meal-counter__stats-spacer"></span>
+            </div>
             <div class="my-ingredients__content">
                 <div class="ingredient-header">
                     <div class="ingredient-header__row ingredient-header__column--one">
@@ -55,6 +35,10 @@
                         <span class="ingredient-header__info ingredient-header__macros">Bílkoviny</span>
                         <span class="ingredient-header__info ingredient-header__macros">Sacharidy</span>
                         <span class="ingredient-header__info ingredient-header__macros">Tuky</span>
+                    </div>
+                    <div class="ingredient-header__row ingredient-header__column--three">
+                        <span class="ingredient-header__info meal-counter-header__ratio">Podíl</span>
+                        <span class="ingredient-header__info meal-counter-header__spacer"></span>
                     </div>
                 </div>
                 <div class="ingredient-item">
@@ -69,7 +53,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">0</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -85,7 +75,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">0</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -101,7 +97,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">0</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -117,7 +119,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">65</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -133,7 +141,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">65</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -149,7 +163,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">5</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -165,7 +185,13 @@
                         <span class="ingredient-item__macros ingredient-item__fat">8</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
@@ -181,41 +207,45 @@
                         <span class="ingredient-item__macros ingredient-item__fat">5</span>
                     </div>
                     <div class="ingredient-item__row ingredient-item__column--three">
-                        <button class="global-button global-button--secondary">Zobrazit</button>
+                        <div class="ingredient-item__ratio-container">
+                            <input class="ingredient-item__ratio" name="ratio" type="number" min="0" max="100" placeholder="0 %" aria-label="Zadejte podíl ingredience">
+                            <div class="global-spin">
+                                <button class="global-spin__button global-spin__button--up" role="button" aria-label="Zvýšit podíl ingredience"></button>
+                                <button class="global-spin__button global-spin__button--down" role="button" aria-label="Snížit podíl ingredience"></button>
+                            </div>
+                        </div>
                         <button class="global-button global-button--tertiary">Odstranit</button>
                     </div>
                 </div>
-                <div class="ingredient-button">
-                    <button class="global-button global-button--primary">Nová ingredience</button>
+                <div class="ingredient-buttons">
+                    <button class="global-button global-button--primary open-modal" data-target="add-ingredient">Přidat ingredienci</button>
+                    <button class="global-button global-button--primary open-modal" data-target="save-meal">Uložit jídlo</button>
                 </div>
             </div>
         </section>    
     </main>
-    <footer class="footer--general">
-        <div class="social">
-            <h2 class="social__header">Sociální sítě</h2>
-            <div class="social__content">
-                <a class="social__link" href="https://www.facebook.com"><img class="global-image" src="/images/logo-facebook.svg" alt="Logo Facebooku"></a>
-                <a class="social__link" href="https://www.twitter.com"><img class="global-image" src="/images/logo-twitter.svg" alt="Logo Twitteru"></a>
-                <a class="social__link" href="https://www.instagram.com"><img class="global-image" src="/images/logo-instagram.svg" alt="Logo Instagramu"></a>
-                <a class="social__link" href="https://www.pinterest.com"><img class="global-image" src="/images/logo-pinterest.svg" alt="Logo Pinterestu"></a>
-                <a class="social__link" href="https://www.youtube.com"><img class="global-image" src="/images/logo-youtube.svg" alt="Logo YouTube"></a>
+    <?php Core\View::render('footer')?>
+    <dialog class="modal" data-target="add-ingredient">
+        <div class="modal__content">
+            <h1 class="modal__header modal__row">Přidat ingredienci</h1>
+            <p class="modal__register-info modal__row">Ingredience</p>
+            <div class="modal__register-name modal__row">Rozinky</div>
+            <div class="modal__buttons modal__row">
+                <button class="global-button global-button--primary close-modal" type="button" data-target="add-ingredient">Přidat</button>
             </div>
         </div>
-        <div class="about">
-            <h2 class="about__header">Informace</h2>
-            <div class="about__content">
-                <a href="/views/gdpr.html" class="about__link">Ochrana osobních údajů</a>
-                <a href="/views/about-author.html" class="about__link">© 2024 Martin Pospíšil</a>
+    </dialog>
+    <dialog class="modal" data-target="save-meal">
+        <div class="modal__content">
+            <h1 class="modal__header modal__row">Uložit jídlo</h1>
+            <p class="modal__register-info modal__row">Ingredience</p>
+            <div class="modal__register-name modal__row">Rozinky</div>
+            <div class="modal__buttons modal__row">
+                <button class="global-button global-button--primary close-modal" type="button" data-target="save-meal">Přidat</button>
             </div>
         </div>
-        <div class="subscribe">
-            <h2 class="subscribe__header">Odběr novinek</h2>
-            <form class="subscribe__content" action="">
-                <input class="subscribe__input" id="subscribe" name="subscribe" type="email" placeholder="Email" aria-label="Vyplntě emailovou adresu pro odběr novinek">
-                <button class="global-button global-button--secondary" type="submit">Odebírat</button>
-            </form>
-        </div>
-    </footer>
+    </dialog>
+    <script src="views/resources/scripts/mealCounter.js"></script>
+    <script src="views/resources/scripts/modal.js"></script>
 </body>
 </html>

@@ -2,7 +2,13 @@
 <html lang="cs">
 <?php Core\View::render('head')?>
 <body>
-    <?php Core\View::render('header-1')?>
+    <?php 
+        if (Core\Auth::user()) {
+            Core\View::render('header-1');
+        } else {
+            Core\View::render('header-0');
+        }
+    ?>
     <main class="main main--general">
         <div class="sub-nav">
             <menu class="sub-nav__menu">

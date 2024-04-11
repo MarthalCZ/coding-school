@@ -2,15 +2,23 @@
 
 namespace App\Controllers;
 
+use Core\Auth;
+use Core\View;
 use App\Utils\Debug;
 use App\Models\Ingredient;
-use Core\View;
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 class MyIngredientsController {
     public function show() {
+        // Check if the user is logged in
+        if (!Auth::user()) {
+            // Redirect unauthenticated users to the login page
+            header('Location: /GitHub/coding-school/mealCounter/login');
+            exit;
+        }
+        
         $ingredients = [];
         $queryResult = (new Ingredient)->all();
 

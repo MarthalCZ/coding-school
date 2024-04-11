@@ -12,7 +12,8 @@
         </menu>
         <menu class="nav__account-menu" aria-label="Menu účtu">
             <li class="nav__account-menu-item"><a class="global-button global-button--menu" href="my-account">Můj účet</a></li>
-            <li class="nav__account-menu-item"><a class="global-button global-button--menu" href="login">Odhlásit</a></li>
+            <li class="nav__account-menu-item"><a class="global-button global-button--menu" href="logout">Odhlásit</a>
+            </li>
         </menu>
     </nav>
     <menu class="switches" aria-label="Menu módu a jazyka">

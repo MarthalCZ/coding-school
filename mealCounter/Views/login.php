@@ -2,9 +2,15 @@
 <html lang="cs">
 <?php Core\View::render('head')?>
 <body>
-    <?php Core\View::render('header-0')?>
+    <?php 
+        if (Core\Auth::user()) {
+            Core\View::render('header-1');
+        } else {
+            Core\View::render('header-0');
+        }
+    ?>
     <main class="main main--login">
-        <form class="form" action="" method="">
+        <form class="form" action="/GitHub/coding-school/mealCounter/login" method="post">
             <h1 class="form__header form__row">Přihlášení</h1>
             <input class="form__input" id="email" name="email" type="email" placeholder="Email" aria-label="Zadejte emailovou adresu">
             <p class="form__warning" id="email-warning">Zadaný email není správný</p>

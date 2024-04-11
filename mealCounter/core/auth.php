@@ -3,6 +3,11 @@
 // Define the namespace "core" for the Auth class
 namespace Core;
 
+use App\Utils\Debug;
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 // Define the Auth class
 class Auth
 {

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="cs">
-<?php Core\View::render('head')?>
+    <?php 
+        if (Core\Auth::user()) {
+            Core\View::render('header-1');
+        } else {
+            Core\View::render('header-0');
+        }
+    ?>
 <body>
     <?php Core\View::render('header-0')?>
     <main class="main main--general">

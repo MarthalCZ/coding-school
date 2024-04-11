@@ -2,9 +2,15 @@
 <html lang="cs">
 <?php Core\View::render('head')?>
 <body>
-    <?php Core\View::render('header-0')?>
+    <?php 
+        if (Core\Auth::user()) {
+            Core\View::render('header-1');
+        } else {
+            Core\View::render('header-0');
+        }
+    ?>
     <main class="main main--login">
-        <form class="form" action="" method="">
+        <form class="form" action="/GitHub/coding-school/mealCounter/register" method="post">
             <h1 class="form__header form__row">Registrace</h1>
             <input class="form__input" id="email" name="email" type="email" placeholder="Email" aria-label="Zadejte emailovou adresu">
             <p class="form__warning" id="email-warning">Email musí obsahovat @ symbol</p>
@@ -12,7 +18,7 @@
             <p class="form__warning" id="password-warning">Heslo musí obsahovat nejméně 8 znaků</p>
             <div class="form__buttons form__row">
                 <button class="global-button global-button--primary" id="show" type="button">Zobrazit heslo</button>
-                <button class="global-button global-button--primary open-modal" id="register" type="submit" data-target="register-success">Zaregistrovat se</button>
+                <button class="global-button global-button--primary " id="register" type="submit" data-target="register-success">Zaregistrovat se</button>
             </div>
             <div class="form__info form__row">
                 <p class="form__info__text">Již máte účet?</p>

@@ -14,10 +14,12 @@ use App\Controllers\IngredientCounterController;
 $router = new Router();
 
 $router->addRoute('/GitHub/coding-school/mealCounter/login', LoginController::class, 'show', 'GET');
-$router->addRoute('/GitHub/coding-school/mealCounter/login', LoginController::class, 'show', 'POST');
+$router->addRoute('/GitHub/coding-school/mealCounter/login', LoginController::class, 'create', 'POST');
+
+$router->addRoute('/GitHub/coding-school/mealCounter/logout', LoginController::class, 'logout', 'GET');
 
 $router->addRoute('/GitHub/coding-school/mealCounter/register', RegisterController::class, 'show', 'GET');
-$router->addRoute('/GitHub/coding-school/mealCounter/register', RegisterController::class, 'show', 'POST');
+$router->addRoute('/GitHub/coding-school/mealCounter/register', RegisterController::class, 'create', 'POST');
 
 $router->addRoute('/GitHub/coding-school/mealCounter/my-account', MyAccountController::class, 'show', 'GET');
 $router->addRoute('/GitHub/coding-school/mealCounter/my-account', MyAccountController::class, 'show', 'POST');

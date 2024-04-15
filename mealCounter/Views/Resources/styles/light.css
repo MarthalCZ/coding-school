@@ -1,0 +1,19 @@
+/* VARIABLES */
+:root {
+    --text-primary-color: #000000;
+    --text-secondary-color: #FFFFFF;
+    --text-tertiary-color: #B6B6B6;
+    --button-primary-color: #5EC2C3;
+    --button-secondary-color: #969EEE;
+    --button-tertiary-color: #E6A3B5;
+    --button-hover-color: #D3E4E8;
+    --background-primary-color: #8BC0C2;
+    --background-secondary-color: #FFFFFF;
+    --background-tertiary-color: #F0F0F0;
+    --border-color: #F0F0F0;
+    --shadow-color: #00000040;
+    --overlay-color: #00000080;
+    --macro-protein-color: #E59B8F;
+    --macro-carbs-color: #C3DCBE;
+    --macro-fat-color: #E9E1B9;
+}

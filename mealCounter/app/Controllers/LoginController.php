@@ -11,10 +11,18 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 class LoginController {
+    
     public function show() {
-        Debug::dump($_SESSION);
+        // Check if the user is not logged in
+        if (Auth::user()) {
+            // Redirect authenticated users to the dashboard page
+            header('Location: /GitHub/coding-school/mealCounter/my-meal-plan');
+            exit;
+        }
+        // Render the login view
         View::render('login');
     }
+
     public function create() {
         // Check if both email and password are provided in the POST request
         if (!isset($_POST['email']) || empty($_POST['email']) || !isset($_POST['password']) || empty($_POST['password'])) {
@@ -24,8 +32,6 @@ class LoginController {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-
-        Debug::dump($_POST['email']);
 
         // Check if the user with the provided email exists
         $user = (new User)->findByEmail($email);
@@ -48,6 +54,11 @@ class LoginController {
         }
     }
 
+    /**
+     * This function logs out current user and redirects back to login
+     * 
+     * @return void
+     */
     public function logout() {
         // Perform logout (clear user ID from the session)
         Auth::logout();

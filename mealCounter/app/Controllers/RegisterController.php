@@ -5,12 +5,20 @@ namespace App\Controllers;
 use Core\Auth;
 use Core\View;
 use App\Models\User;
+use App\Utils\Debug;
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 class RegisterController {
+    
     public function show() {
+        // Check if the user is not logged in
+        if (Auth::user()) {
+            // Redirect authenticated users to the dashboard page
+            header('Location: /GitHub/coding-school/mealCounter/my-meal-plan');
+            exit;
+        }
         // Render the register view
         View::render('register');
     }

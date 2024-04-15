@@ -1,0 +1,18 @@
+:root {
+    --text-primary-color: #FFFFFF;        /* Main text color */
+    --text-secondary-color: #FFFFFF;      /* Secondary text color */
+    --text-tertiary-color: #888888;       /* Tertiary text color */
+    --button-primary-color: #3CA6A7;      /* Primary button color */
+    --button-secondary-color: #7C7CE1;    /* Secondary button color */
+    --button-tertiary-color: #E57D8F;     /* Tertiary button color */
+    --button-hover-color: #2F5A5C;        /* Button hover color */
+    --background-primary-color: #333333;  /* Main background color */
+    --background-secondary-color: #222222;/* Secondary background color */
+    --background-tertiary-color: #1C1C1C; /* Tertiary background color */
+    --border-color: #444444;              /* Border color */
+    --shadow-color: #00000040;            /* Shadow color */
+    --overlay-color: #00000080;           /* Overlay color */
+    --macro-protein-color: #E57D8F;       /* Protein representing color */
+    --macro-carbs-color: #A2CC9F;         /* Carbs representing color */
+    --macro-fat-color: #C4BBA0;           /* Fat representing color */
+}

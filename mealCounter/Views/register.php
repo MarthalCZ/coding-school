@@ -3,6 +3,7 @@
 <?php Core\View::render('head')?>
 <body>
     <?php 
+        $localization = App\Utils\Helpers::getLocalization();
         if (Core\Auth::user()) {
             Core\View::render('header-1');
         } else {

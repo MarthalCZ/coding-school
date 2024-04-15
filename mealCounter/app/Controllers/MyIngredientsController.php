@@ -11,6 +11,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 class MyIngredientsController {
+
     public function show() {
         // Check if the user is logged in
         if (!Auth::user()) {
@@ -18,9 +19,11 @@ class MyIngredientsController {
             header('Location: /GitHub/coding-school/mealCounter/login');
             exit;
         }
+
+        $user = Auth::user();
         
         $ingredients = [];
-        $queryResult = (new Ingredient)->all();
+        $queryResult = (new Ingredient)->all($user);
 
         foreach ($queryResult as $ingredient) {
             // Append each row to the $ingredients array with modified values
@@ -38,7 +41,7 @@ class MyIngredientsController {
             ];
         }
         // Render the view with the modified $ingredients array
-        return View::render('my-ingredients', ['ingredients' => $ingredients]);
+        View::render('my-ingredients', ['ingredients' => $ingredients]);
     }
 }
     

@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 class MealCounterController {
+    
     public function show() {
         // Check if the user is logged in
         if (!Auth::user()) {

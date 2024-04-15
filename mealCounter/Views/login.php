@@ -2,7 +2,8 @@
 <html lang="cs">
 <?php Core\View::render('head')?>
 <body>
-    <?php 
+    <?php
+        $localization = App\Utils\Helpers::getLocalization();
         if (Core\Auth::user()) {
             Core\View::render('header-1');
         } else {

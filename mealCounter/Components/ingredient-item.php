@@ -1,3 +1,4 @@
+<?php $localization = App\Utils\Helpers::getLocalization(); ?>
 <div class="ingredient-item">
     <div class="ingredient-item__row ingredient-item__column--one">
         <span class="ingredient-item__info ingredient-item__name"><?php echo $name; ?></span>
@@ -10,7 +11,7 @@
         <span class="ingredient-item__macros ingredient-item__fat"><?php echo $fat; ?></span>
     </div>
     <div class="ingredient-item__row ingredient-item__column--three">
-        <button class="global-button global-button--secondary">Zobrazit</button>
-        <button class="global-button global-button--tertiary">Odstranit</button>
+        <button class="global-button global-button--secondary"><?php echo $localization['display'] ?></button>
+        <button class="global-button global-button--tertiary"><?php echo $localization['remove'] ?></button>
     </div>
 </div>

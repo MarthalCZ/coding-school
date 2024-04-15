@@ -2,29 +2,24 @@
 
 namespace App\Models;
 
-use App\Utils\Debug;
-
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
 class User extends BaseModel {
     // Retrieve all users from the database
-    public function all() {  
-        return $this->database->executeQuery('SELECT * FROM users');
-    }
+    public function all($user_id) {
+        // Prepare the SQL query to select account details for a specific user_id
+        $sql = "SELECT * FROM users WHERE id = '$user_id'";
 
+        // Execute the query with the provided user_id as a parameter
+        return $this->database->executeQuery($sql, [$user_id]);
+    }
     // Create a new user with the provided data
     public function create($data) {
         // Hash the password using the PASSWORD_DEFAULT algorithm
-        $data['password'] =  password_hash($data['password'], PASSWORD_DEFAULT);
+        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         // Check if the user already exists based on the email address
         if ($this->exists($data['email'])) {
             // If user already exists, return false
             return false;
-            // Stop script execution
-            die();
         }    
-
         // Prepare the SQL query for inserting a new user
         $sql = "INSERT INTO users (email, password) VALUES ('" . $data['email'] . "', '" . $data['password'] . "')";
         // Execute the SQL query to insert the new user into the database
@@ -33,18 +28,67 @@ class User extends BaseModel {
         return true;
     }
 
+    public function updateEmail(int $user_id, string $new_email) {
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET email = '$new_email' WHERE id = $user_id";
+
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+    
+    public function updatePassword(int $user_id, string $new_password) {
+        // Hash the new password
+        $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET password = '$hashed_password' WHERE id = $user_id";
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+
+    public function updateSubscription(int $user_id, int $value) {
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET subscribed = '$value' WHERE id = $user_id";
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+
+    public function updateUnits(int $user_id, int $value) {
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET units = '$value' WHERE id = $user_id";
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+
+    public function updateMode(int $user_id, int $value) {
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET mode = '$value' WHERE id = $user_id";
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+
+    public function updateLanguage(int $user_id, int $value) {
+        // Prepare the SQL query for updating the user's password
+        $sql = "UPDATE users SET language = '$value' WHERE id = $user_id";
+        // Execute the SQL query to update the password
+        $this->database->executeQuery($sql);
+    }
+
+    public function deleteUser($user_id) {
+        // Prepare the SQL query for deleting user's account
+        $sql = "DELETE FROM users WHERE id = '$user_id'";
+        // Execute the SQL query to delete the account
+        return $this->database->executeQuery($sql, $user_id);
+    }
+
     // Find a user by their email address
-    public function findByEmail($email)
-    {
+    public function findByEmail($email) {
         // Prepare the SQL query for filtering matching email
         $sql = "SELECT * FROM users WHERE email = '$email'";
         // Return the first result (assuming there's only one matching user)
         return $this->database->executeQuery($sql)[0];
     }
-
     // Check if a user with the specified email address exists
-    public function exists(string $email)
-    {
+    public function exists(string $email) {
         // Prepare the SQL query for filtering matching email
         $sql = "SELECT email FROM users WHERE email = '$email'";    
 

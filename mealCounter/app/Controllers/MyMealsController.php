@@ -18,9 +18,11 @@ class MyMealsController {
             header('Location: /GitHub/coding-school/mealCounter/login');
             exit;
         }
+
+        $user = Auth::user();
         
         $meals = [];
-        $queryResult = (new Meal)->all();
+        $queryResult = (new Meal)->all($user);
         
         foreach ($queryResult as $meal) {
             // Append each row to the $meals array with roundedmodified values
@@ -33,6 +35,6 @@ class MyMealsController {
             }
 
         // Render the view with the modified $meals array
-        return View::render('my-meals', ['meals' => $meals]);
+        View::render('my-meals', ['meals' => $meals]);
     }
 }

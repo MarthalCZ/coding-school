@@ -1,20 +1,3 @@
-/* VARIABLES */
-:root {
-    --text-primary-color: #000000;
-    --text-secondary-color: #FFFFFF;
-    --text-tertiary-color: #B6B6B6;
-    --button-primary-color: #5EC2C3;
-    --buton-secondary-color: #969EEE;
-    --button-tertiary-color: #E6A3B5;
-    --button-hover-color: #D3E4E8;
-    --background-primary-color: #8BC0C2;
-    --background-secondary-color: #FFFFFF;
-    --background-tertiary-color: #F0F0F0;
-    --border-color: #F0F0F0;
-    --shadow-color: #00000040;
-    --overlay-color: #00000080;
-}
-
 /* GLOBAL */
 * {
 	box-sizing: border-box;
@@ -44,6 +27,10 @@ a {
     font-weight: 700;
     color: var(--button-primary-color);
     cursor: pointer;
+
+    &:hover {
+        opacity: 75%;
+    }
 }
 
 h1 {
@@ -95,7 +82,7 @@ h2 {
 }
 
 .global-button--secondary {
-    background: var(--buton-secondary-color);
+    background: var(--button-secondary-color);
 
     &:hover {
         opacity: 75%;
@@ -189,30 +176,29 @@ h2 {
         transform: translateX(-28px);
     }
 
-    #mode + .global-switch__slider::after {
-        content: "Noc";
+    #toggle-mode + .global-switch__slider::after {
+        content: "Dark";
     }
 
-    #mode:checked + .global-switch__slider::after {
-        content: "Den";
+    #toggle-mode:checked + .global-switch__slider::after {
+        content: "Light";
     }
 
-    #lang + .global-switch__slider::after {
+    #toggle-lang + .global-switch__slider::after {
         content: "ENG";
     }
 
-    #lang:checked + .global-switch__slider::after {
-        content: "CZ";
+    #toggle-lang:checked + .global-switch__slider::after {
+        content: "CS";
     }
 
-    #unit + .global-switch__slider::after {
+    #toggle-units + .global-switch__slider::after {
         content: "kJ";
     }
 
-    #unit:checked + .global-switch__slider::after {
+    #toggle-units:checked + .global-switch__slider::after {
         content: "kCal";
     }
-    
 }
 
 .global-spin {
@@ -229,7 +215,7 @@ h2 {
         width: 30px;
         height: 23px;
         background-color: var(--button-primary-color);
-        color: var(--background-secondary-color);
+        color: var(--text-secondary-color);
         transition: all 0.25s;
         overflow: hidden;
         cursor: pointer;
@@ -574,6 +560,7 @@ body {
     display: flex;
     gap: 1rem;
 
+    form,
     input {
         text-align: center;
     }
@@ -660,18 +647,18 @@ body {
     .meal-item__protein,
     .ingredient-item__protein {
         border-radius: 1rem 0 0 1rem;
-        background: #E59B8F;
+        background: var(--macro-protein-color);
     }
     
     .meal-item__carbs,
     .ingredient-item__carbs {
-        background: #C3DCBE;
+        background: var(--macro-carbs-color);
     }
     
     .meal-item__fat,
     .ingredient-item__fat {
         border-radius: 0 1rem 1rem 0;
-        background: #E9E1B9;
+        background: var(--macro-fat-color);
     }
 
     button {
@@ -788,9 +775,15 @@ input[type="password"],
     padding: 1rem;
 }
 
+.form__input {
+    text-align: center;
+}
+
 .form__warning {
     display: none;
+    width: 100%;
     padding: 0 1rem;
+    text-align: center;
     color: var(--button-tertiary-color);
 }
 
@@ -872,6 +865,7 @@ input[type="password"],
     transform: translate(-50%, -50%);
     background: none;
     overflow: visible;
+    color: var(--text-primary-color);
 
     &::backdrop {
         background: var(--overlay-color);
@@ -967,7 +961,7 @@ input[type="password"],
 
     .donut-chart__segment--one {
         background: conic-gradient(
-            #E59B8F 0deg calc(3.6deg * var(--protein)),
+            var(--macro-protein-color) 0deg calc(3.6deg * var(--protein)),
             transparent calc(3.6deg * var(--protein)) 360deg
             );
         z-index: 3;
@@ -976,7 +970,7 @@ input[type="password"],
     .donut-chart__segment--two {
         background: conic-gradient(
             transparent 0deg calc(3.6deg * var(--protein)),
-            #C3DCBE calc(3.6deg * var(--protein)) calc(3.6deg * (var(--protein) + var(--carbs))),
+            var(--macro-carbs-color) calc(3.6deg * var(--protein)) calc(3.6deg * (var(--protein) + var(--carbs))),
             transparent calc(3.6deg * (100 - var(--fat))) 360deg
             );
         z-index: 2;
@@ -985,7 +979,7 @@ input[type="password"],
     .donut-chart__segment--three {
         background: conic-gradient(
             transparent 0deg calc(3.6deg * (100 - var(--fat))),
-            #E9E1B9 calc(3.6deg * (100 - var(--fat))) 360deg
+            var(--macro-fat-color) calc(3.6deg * (100 - var(--fat))) 360deg
             );
         z-index: 1;
     }

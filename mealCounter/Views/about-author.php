@@ -17,9 +17,9 @@
                 <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="about-author"><?php echo $localization['about_author'] ?></a></li>
             </menu>
         </div>
-        <section class="my-ingredients">
-            
-        </section>
+        <article class="article">
+            <?php echo App\Utils\Helpers::getArticle('about-author'); ?>
+        </article>
     </main>
     <?php Core\View::render('footer')?>
 </body>

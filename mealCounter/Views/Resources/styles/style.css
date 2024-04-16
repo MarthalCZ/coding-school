@@ -185,7 +185,7 @@ h2 {
     }
 
     #toggle-lang + .global-switch__slider::after {
-        content: "ENG";
+        content: "EN";
     }
 
     #toggle-lang:checked + .global-switch__slider::after {
@@ -385,7 +385,8 @@ body {
 
 .my-meals,
 .my-ingredients,
-.my-account {
+.my-account,
+.article {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -704,6 +705,34 @@ body {
     justify-content: space-between;
 }
 
+/* TEXTS */
+.article {
+    h2 {
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+
+    li {
+        line-height: 1.5;
+        margin-left: 2rem;
+    }
+
+    p {
+        line-height: 1.5;
+        text-align: justify;
+    }
+}
+
 /* FORMS */
 .form {
     display: flex;
@@ -803,7 +832,7 @@ input[type="password"],
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 1rem;
         flex: 1;
@@ -813,6 +842,10 @@ input[type="password"],
         background: var(--background-primary-color);
         box-shadow: 0 4px 8px var(--shadow-color);
         color: var(--text-secondary-color);
+
+        h2 {
+            padding: 1rem;
+        }
     }
 
     .social__content {
@@ -838,6 +871,8 @@ input[type="password"],
         gap: 1rem;
 
         .about__link {
+            width: 100%;
+            text-align: center;
             font-weight: 500;
             color: var(--text-secondary-color);
         }

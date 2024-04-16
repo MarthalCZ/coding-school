@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use Core\Auth;
 use Core\View;
+use Core\Session;
+use App\Models\User;
 use App\Utils\Debug;
 use App\Models\Ingredient;
 
@@ -43,5 +45,31 @@ class MyIngredientsController {
         // Render the view with the modified $ingredients array
         View::render('my-ingredients', ['ingredients' => $ingredients]);
     }
+
+    public function deleteIngredient() {
+        
+        // Retrieve user's ingredients
+        $user = Auth::user();
+        $ingredients = (new Ingredient)->all($user);
+
+         // Retrieve user ID from session
+        $user_id = $_SESSION['user_id'];
+
+        // Check if the form is submitted for deletion
+        if (isset($_POST['delete'])) {
+            // Retrieve ingredient ID from the form data
+            $ingredient_id = $_POST['delete'];
+
+            // Instantiate the Ingredient model
+            $ingredientModel = new Ingredient();
+
+            // Attempt to delete the ingredient by ID and user ID
+            $ingredientModel->delete($ingredient_id, $user_id);
+            // Redirect to my-ingredients with success message
+            header('Location: /GitHub/coding-school/mealCounter/my-ingredients?success=ingredient-deleted');
+        } else {
+            // Redirect to my-ingredients with error message
+            header('Location: /GitHub/coding-school/mealCounter/my-ingredients?error=ingredient-not-deleted');
+        }
+    }
 }
-    

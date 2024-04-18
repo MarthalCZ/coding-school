@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Core\Auth;
 use Core\View;
+use App\Models\User;
 use App\Utils\Debug;
 use App\Models\Macro;
 use App\Utils\Helpers;
@@ -51,6 +52,7 @@ class IngredientCounterController {
     }
 
     public function create() {
+        $user_id = $_SESSION['user_id'];
         // Check if ingredient name was submitted
         if (isset($_POST['name'])) {
             // Create ingredient array from submitted data
@@ -68,7 +70,11 @@ class IngredientCounterController {
             $ingredientModel = new Ingredient();
             // Call the create method to insert new ingredient
             $ingredientModel->create($ingredient);
-
+            // Update number of user's ingredients in DB
+            $ingredients = (new Ingredient)->all($user_id);
+            $value = count($ingredients);
+            $userModel = new User();
+            $userModel->updateIngredientCount($user_id, $value);
             // Redirect to ingredient counter with success message
             return header('Location: /GitHub/coding-school/mealCounter/ingredient-counter?success=ingredient-created');
         } else {

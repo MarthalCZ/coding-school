@@ -47,24 +47,22 @@ class MyIngredientsController {
     }
 
     public function deleteIngredient() {
-        
-        // Retrieve user's ingredients
-        $user = Auth::user();
-        $ingredients = (new Ingredient)->all($user);
-
          // Retrieve user ID from session
         $user_id = $_SESSION['user_id'];
 
-        // Check if the form is submitted for deletion
+        // Check if the delete form is submitted
         if (isset($_POST['delete'])) {
             // Retrieve ingredient ID from the form data
             $ingredient_id = $_POST['delete'];
-
             // Instantiate the Ingredient model
             $ingredientModel = new Ingredient();
-
             // Attempt to delete the ingredient by ID and user ID
             $ingredientModel->delete($ingredient_id, $user_id);
+            // Update number of user's ingredients in DB
+            $ingredients = (new Ingredient)->all($user_id);
+            $value = count($ingredients);
+            $userModel = new User();
+            $userModel->updateIngredientCount($user_id, $value);
             // Redirect to my-ingredients with success message
             header('Location: /GitHub/coding-school/mealCounter/my-ingredients?success=ingredient-deleted');
         } else {

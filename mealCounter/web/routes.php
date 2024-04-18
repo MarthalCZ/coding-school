@@ -41,6 +41,7 @@ $router->addRoute('/GitHub/coding-school/mealCounter/my-meals', MyMealsControlle
 $router->addRoute('/GitHub/coding-school/mealCounter/my-meals', MyMealsController::class, 'show', 'POST');
 
 $router->addRoute('/GitHub/coding-school/mealCounter/my-ingredients', MyIngredientsController::class, 'show', 'GET');
+$router->addRoute('/GitHub/coding-school/mealCounter/my-ingredients/display-ingredient', MyIngredientsController::class, 'displayIngredient', 'POST');
 $router->addRoute('/GitHub/coding-school/mealCounter/my-ingredients/delete-ingredient', MyIngredientsController::class, 'deleteIngredient', 'POST');
 
 $router->addRoute('/GitHub/coding-school/mealCounter/meal-counter', MealCounterController::class, 'show', 'GET');

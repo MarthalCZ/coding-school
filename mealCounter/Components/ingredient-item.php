@@ -11,8 +11,9 @@
         <span class="ingredient-item__macros ingredient-item__fat"><?php echo $fat; ?></span>
     </div>
     <div class="ingredient-item__row ingredient-item__column--three">
-        <form action="">
-            <button class="global-button global-button--secondary" type="submit"><?php echo $localization['display'] ?></button>
+        <form action="/GitHub/coding-school/mealCounter/my-ingredients/display-ingredient" method="post">
+            <input name="display" type="hidden" value="<?php echo $id; ?>">
+            <button class="global-button global-button--secondary open-modal" type="submit" data-target="display-ingredient-<?php echo $id ?>"><?php echo $localization['display'] ?></button>
         </form>
         <form action="/GitHub/coding-school/mealCounter/my-ingredients/delete-ingredient" method="post">
             <input name="delete" type="hidden" value="<?php echo $id; ?>">

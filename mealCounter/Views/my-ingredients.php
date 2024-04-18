@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="cs">
-<?php Core\View::render('head')?>
+<?php
+
+use App\Utils\Debug;
+
+ Core\View::render('head') ?>
 <body>
     <?php
-        $localization = App\Utils\Helpers::getLocalization();
-        if (Core\Auth::user()) {
-            Core\View::render('header-1');
-        } else {
-            Core\View::render('header-0');
-        }
+    $localization = App\Utils\Helpers::getLocalization();
+    if (Core\Auth::user()) {
+        Core\View::render('header-1');
+    } else {
+        Core\View::render('header-0');
+    }
     ?>
     <main class="main main--general">
         <section class="my-ingredients">
@@ -45,8 +49,19 @@
                     <a class="global-button global-button--primary" href="ingredient-counter"><?php echo $localization['new_ingredient'] ?></a>
                 </div>
             </div>
-        </section>    
+        </section>
     </main>
-    <?php Core\View::render('footer')?>
+    <?php Core\View::render('footer') ?>
+    <?php
+                // Check if ingredients array is not empty
+                if (!empty($ingredients)) {
+                    // Loop through each ingredient
+                    foreach ($ingredients as $ingredient) {
+                        // Render the ingredient-item component for each ingredient
+                        Core\View::render('ingredient-modal', $ingredient);
+                    }
+                }
+                ?>
+    <script src="views/resources/scripts/modal.js"></script>
 </body>
 </html>

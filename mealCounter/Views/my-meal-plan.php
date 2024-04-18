@@ -13,13 +13,13 @@
     <main class="main main--general">
         <div class="sub-nav">
             <menu class="sub-nav__menu">
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-monday"><?php echo $localization['monday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-tuesday"><?php echo $localization['tuesday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-wednesday"><?php echo $localization['wednesday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-thursday"><?php echo $localization['thursday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-friday"><?php echo $localization['friday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-saturday"><?php echo $localization['saturday'] ?></a></li>
-                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan-sunday"><?php echo $localization['sunday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['monday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['tuesday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['wednesday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['thursday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['friday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['saturday'] ?></a></li>
+                <li class="sub-nav__menu-item"><a class="global-button global-button--menu" href="my-meal-plan"><?php echo $localization['sunday'] ?></a></li>
             </menu>
         </div>
         <section class="my-ingredients">

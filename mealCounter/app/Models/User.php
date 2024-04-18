@@ -73,6 +73,13 @@ class User extends BaseModel {
         $this->database->executeQuery($sql);
     }
 
+    public function updateIngredientCount(int $user_id, int $value) {
+        // Prepare the SQL query for updating user's ingredient count
+        $sql = "UPDATE users SET ingredients = '$value' WHERE id = $user_id";
+        // Execute the SQL query to update ingredient count
+        $this->database->executeQuery($sql);
+    }
+
     public function deleteUser($user_id) {
         // Prepare the SQL query for deleting user's account
         $sql = "DELETE FROM users WHERE id = '$user_id'";

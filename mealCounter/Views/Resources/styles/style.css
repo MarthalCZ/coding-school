@@ -52,6 +52,7 @@ h2 {
 .global-button {
     display: block;
     width: max-content;
+    min-width: 112px;
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
@@ -925,6 +926,53 @@ input[type="password"],
             flex-basis: 100%;
         }
     }
+
+    .modal__content--wide {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+        min-width: 320px;
+
+        .modal__content-column {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            row-gap: 1rem;
+            min-width: 320px;
+            min-height: 320px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            background: var(--background-secondary-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+
+            h1 {
+                padding: 1rem;
+            }
+        }
+
+        .modal__content-column-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center ;
+            width: 100%;
+        }
+
+        .modal__content-column--one {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .modal__content-column--two {
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
     
     .modal__header {
         padding: 1rem;
@@ -1017,5 +1065,43 @@ input[type="password"],
             var(--macro-fat-color) calc(3.6deg * (100 - var(--fat))) 360deg
             );
         z-index: 1;
+    }
+}
+
+.donut-chart__macros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+
+    .donut-chart__macros-dot {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 0.25rem;
+    }
+
+    .donut-chart__macros-dot::before {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 0.5rem;
+        content: "";
+    }
+
+    .macro-dot--protein::before {
+        background: var(--macro-protein-color);
+    }
+
+    .macro-dot--carbs::before {
+        background: var(--macro-carbs-color);
+    }
+
+    .macro-dot--fat::before {  
+        background: var(--macro-fat-color);
     }
 }

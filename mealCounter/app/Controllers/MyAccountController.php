@@ -52,12 +52,6 @@ class MyAccountController {
             // Refresh meal & ingredient count in session
             Session::updateSession('meals', $account['meals']);
             Session::updateSession('ingredients', $account['ingredients']);
-            
-            //Debug::dump($_SESSION);
-            //Debug::dump($_SERVER['REQUEST_URI']);
-            //Debug::dump($_SERVER['HTTP_REFERER']);
-            //Debug::dump($_SERVER['DOCUMENT_ROOT']);
-
         // Render the view and pass data
         View::render('my-account', [
             'account' => $account,

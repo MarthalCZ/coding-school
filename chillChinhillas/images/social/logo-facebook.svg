@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Vrstva_1"
+   x="0px"
+   y="0px"
+   width="50"
+   height="50"
+   viewBox="0 0 50 50"
+   enable-background="new 0 0 55 55"
+   xml:space="preserve"
+   sodipodi:docname="Logo Facebook 01.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
+   id="metadata15"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs13" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview11"
+   showgrid="false"
+   inkscape:zoom="4.2909091"
+   inkscape:cx="27.5"
+   inkscape:cy="27.5"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Vrstva_1" />
+
+<g
+   transform="matrix(0.98039216,0,0,0.98039216,-1.9607844,-1.9607844)"
+   id="g8">
+	<rect
+   style="fill:#578bc9"
+   id="rect2"
+   height="51"
+   width="51"
+   y="2"
+   x="2" />
+	<g
+   id="g6">
+		<path
+   style="fill:#ffffff"
+   inkscape:connector-curvature="0"
+   id="path4"
+   d="M 24.594,27.466 H 21.64 v -4.062 h 2.954 v -2.398 c 0,-1.815 0.338,-3.162 1.015,-4.039 0.677,-0.876 1.938,-1.314 3.784,-1.314 h 4.061 v 4.061 H 30.64 c -0.709,0 -1.154,0.123 -1.339,0.369 -0.185,0.247 -0.276,0.678 -0.276,1.293 v 2.029 h 4.43 l -0.416,4.062 H 29.025 V 39.28 h -4.43 V 27.466 Z" />
+	</g>
+</g></svg>

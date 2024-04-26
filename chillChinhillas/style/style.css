@@ -1,0 +1,971 @@
+/* GLOBAL ELEMENTS*/
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+/* TEXT ELEMENTS */
+h1, h2, h3, h4, h5, h6 {
+	margin: 1.5rem 0 0.75rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h5, h6 {
+    font-size: 1rem;
+}
+
+header>h2:first-child,
+section>h2:first-child,
+footer>h2:first-child {
+    margin-top: 0;
+}
+
+header>h3:first-child,
+section>h3:first-child,
+footer>h3:first-child {
+    margin-top: 0;
+}
+
+h5, h6 {
+    font-size: 1rem;
+}
+
+p {
+	text-align: justify;
+}
+
+p+p, p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+	margin-top: 1rem;
+}
+
+ul, ol {
+    font-weight: 700;
+}
+
+ul li,
+ol li {
+    font-weight: 400;
+    margin-left: 2rem;
+}
+
+ul>li:first-child,
+ol>li:first-child {
+    margin-top: 0.75rem;
+}
+
+a:link, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p a:hover,
+p a:active,
+ul a:hover,
+ul a:active,
+ol a:hover,
+ol a:active {
+    background-color: #CB9AE1;
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin: 0px -4px;
+}
+
+menu {
+    font-size: 0;
+}
+
+menu li {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+/* FORM INPUT */
+form {
+    font-size: 0;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+input,
+textarea {
+    display: inline-block;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #CB9AE1;
+    box-shadow: 1px 1px 3px #ffffff, inset 1px 1px 3px #000000;
+}
+
+label+input, label+textarea {
+    margin: 0.75rem 0;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="name"],
+input[type="number"],
+input[type="email"],
+input[type="file"],
+textarea {
+    width: 100%;
+    text-align: left;
+}
+
+::placeholder, textarea::placeholder {
+    color: #ffffff;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    visibility: hidden;
+}
+
+/* CUSTOM FORM RADIO */
+input[type=radio] {
+    display: inline-grid;
+    position: relative;
+    place-content: center;
+    appearance: none;
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 25%;
+    background: #CB9AE1;
+    margin: 0 0.5rem 0 0;
+}
+
+input[type=radio]::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  transition: all 0.25s;
+  width: 0.75em;
+  height: 0.75em;
+  content:"";
+  border-radius: 25%;
+  background: #969EEE;
+  box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+}
+
+input[type=radio]:checked::after {
+  transform: translate(-50%,-50%) scale(1);
+  transition: all 0.25s;
+}
+
+.label {
+    display: inline-grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: 1.5em;
+    line-height: 1.5em;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.75rem 0.75rem 0.75rem 0;
+}
+
+/* CUSTOM FORM BUTTONS*/
+
+input[type="submit"] {
+    display: block;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #969EEE;
+    box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #CB9AE1;
+    transition: all 0.25s;
+}
+
+input[type="file"] {
+    padding: 0;
+    font-weight: 700;
+    background-color: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+input::file-selector-button {
+    display: block;
+    padding: 10px;
+    margin-right: 1rem;
+    margin-bottom: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #969EEE;
+    box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+    transition: all 0.25s;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+input::file-selector-button,
+input[type="submit"] {
+    width: auto;
+}
+
+input::file-selector-button:hover {
+    background-color: #CB9AE1;
+    transition: all 0.25s;
+}
+
+/* LAYOUT */
+body {
+	width: 75%; /* 72.1% = 1280px */
+    min-width: 320px;
+    margin: auto;
+    padding: 3rem;
+    background: #A6D3DF;
+    transition: all 0.5s;
+}
+
+.main {
+	display: grid;
+    position: relative;
+    width: 100%;
+    min-height: max-content;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "h-line h-line h-line"
+    "article article section"
+    "f-line f-line f-line"
+    "footer footer footer"
+    ;
+}
+
+.home,
+.e-shop {
+    display: grid;
+    position: relative;
+    width: 100%;
+    min-height: max-content;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "h-line h-line h-line"
+    "article article article"
+    "section section section"
+    "review review review"
+    "f-line f-line f-line"
+    "footer footer footer"
+    ;
+}
+
+.header,
+.article,
+.section,
+.review,
+.footer {
+	padding: 3rem;
+	border-radius: 1.5rem;
+	background: #5EC2C3;
+}
+
+/* HEADER */
+.header {
+	grid-area: header;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: max-content 2fr 1fr;
+    grid-template-areas:
+    "logo title space"
+    "logo subtitle space"
+    "menu menu menu"
+    ;
+    
+}
+
+.logo {
+	grid-area: logo;
+	position: relative;
+    width: 6rem;
+    height: 6rem;
+    background: none;
+    cursor: grab;
+}
+
+.logo img {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.title {
+	grid-area: title;
+    position: relative;
+    font-family: "Brush Script MT", cursive;
+    margin-top: 1rem;
+}
+
+.title h1:hover {
+    text-shadow: -3px -3px 0px #CB9AE1;
+}
+
+.subtitle {
+	grid-area: subtitle;
+    font-family: "Comic Sans MS";
+    font-style: italic;
+    text-align: left;
+    margin-top: -1rem;
+}
+
+.space {
+	grid-area: space;
+}
+
+[data-title]::after {
+    display: inline-block;
+    position: absolute;
+    top: -2.25rem;
+    width: max-content;
+    content: attr(data-title);
+    font-family: Comic Sans MS;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #CB9AE1;
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: all 0.25s;
+    visibility: hidden;
+    z-index: 5;
+ }
+
+ [data-title]:hover::after {
+    opacity: 1;
+    transition: all 0.25s;
+    transition-delay: 0.5s;
+    visibility: visible;
+}
+
+/* MENU */
+nav {
+    grid-area: menu;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.25rem;
+    font-weight: 700;
+}
+
+.menu li {
+    line-height: 2.5rem;
+}
+
+.menu a:link,
+.menu a:visited { 
+	color: #ffffff;
+    padding: 10px;
+    border-radius: 0.75rem;
+    background: #969EEE;
+    box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+    transition: all 0.25s;
+}
+
+.menu a:hover,
+.menu a:active,
+.menu a:focus { 
+	color: #ffffff;
+    background: #CB9AE1;
+}
+
+.menu a:focus {
+    box-shadow: inset 1px 1px 3px #ffffff, 0px 0px 3px #000000;
+    transition: all 0.25s;
+}
+
+#search {
+    font-size: 1rem;
+}
+
+search input {
+    font-size: 1rem;
+    line-height: 37px;
+    padding: 0 10px;
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 0.25rem;
+    font-size: 0;
+    font-weight: 700;
+}
+
+.breadcrumbs > li {
+	display: inline-block;
+    font-size: 1rem;
+}
+
+.breadcrumbs li+li::before {
+    margin-right: 0.25rem;
+    font-weight: 700;
+    content: "\279D"; /*2192, 25B8, 276D, 276F*/
+}
+
+.breadcrumbs li a {
+    padding: 10px;
+    border-radius: 10px;
+    background: none;
+}
+
+.breadcrumbs li a:hover {
+    background-color: #CB9AE1;
+    font-weight: 700;
+}
+
+/* SCROLL TO TOP BUTTON*/
+
+#scroll-top-btn {
+    display: none;
+    position: fixed;
+    right: 11.9%;
+    bottom: 5%;
+    padding: 10px;
+    width: 36px;
+    height: auto;
+    margin: 1rem 0.75rem;
+    text-align: center;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #969EEE;
+    box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+    transition: all 0.25s;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+#scroll-top-btn:hover {
+    background-color: #CB9AE1;
+    transition: all 0.25s;
+}
+
+/* LINES */
+hr {
+    border: solid 5px #969EEE;
+    border-radius: 5px;
+    width: 97%;
+    margin: auto;
+}
+
+.vl {
+    border: solid 5px #969EEE;
+    border-radius: 5px;
+    width: 5px;
+    height: 97%;
+    float: left;
+    margin: 24px 8px 24px 8px;
+}
+
+.vl::after { /*ukončení floatu za elementem*/
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.h-line {
+    grid-area: h-line;
+}
+
+.f-line {
+	grid-area: f-line;
+}
+
+/* MAIN */
+.article {
+	grid-area: article;
+}
+
+.section {
+	grid-area: section;
+    display: grid;
+    position: relative;
+    gap: 0.75rem;
+    align-content: start;
+    overflow: hidden;
+}
+
+/* PRODUCT GALLERY */
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.product-card {
+    flex-basis: 24%;
+    min-width: 256px;
+}
+
+.product-card:hover h5 {
+    display: block;
+}
+
+.product-card:hover h4 {
+    display: none;
+}
+
+
+.product-card-info {
+    width: 80%;
+    height: 3rem;
+    margin: auto;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #CB9AE1;
+    overflow: hidden;
+}
+
+.product-card-info h4 {
+    margin: 0;
+    line-height: 2rem;
+}
+
+.product-card-info h5 {
+    display: none;
+    margin: 0;
+    line-height: 2rem;
+}
+
+.product-card-info h5::before {
+    content: "~ ";
+}
+
+.product-card-info h5::after {
+    content: " Kč";
+}
+
+/* CUSTOMER REFERENCES*/
+
+.review {
+    grid-area: review;
+    display: grid;
+}
+
+.customer-reference {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.customer-review {
+    display: grid;
+    flex-basis: 30.6%;
+    min-width: 256px;
+    text-align: justify;
+    font-style: italic;
+}
+
+.customer-info {
+    height: 5rem;
+    margin-top: 1rem;
+}
+
+.customer-name {
+    position: relative;
+    line-height: 5rem;
+    text-align: right;
+    font-weight: 700;
+}
+
+.customer-image {
+    position: relative;
+    float: right;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.customer-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.clearfix::after { /* Ukončení floatu */
+    display: table;
+    content: "";
+    clear: both;
+  }
+
+/* FOOTER */
+
+.footer {
+	grid-area: footer;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "social social contact"
+    "chinny chinny chinny"
+    "copyright copyright copyright"
+    ;
+}
+
+/* SOCIAL MEDIA */
+
+.social {
+    grid-area: social;
+}
+
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.social-media li {
+    display: inline-block;
+    font-size: 0;
+}
+
+.social-media li a {
+    display: inline-block;
+}
+
+.social-media li img {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.social-media li img:hover {
+    filter: brightness(150%);
+    transform: scale(125%);
+}
+
+.social>h2,
+.newsletter>h2 {
+    margin-top: 0;
+}
+
+.chinchilla-run {
+    grid-area: chinny;
+    width: 100%;
+	color: white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chinchilla-run-box {
+    width: 100%;
+    animation: marquee 15s linear 1;
+    visibility: hidden;
+}
+
+.chinchilla-run-box img {
+    width: 128px;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(-256px, 0) scaleX(1); visibility: visible; }
+    49%  { transform: translate(100%, 0) scaleX(1); }
+    50%  { transform: translate(256px, 0) scaleX(-1); }
+    100% { transform: translate(-100%, 0) scaleX(-1); }
+ 
+}
+
+/* COPYRIGHT */
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* MEDIA */
+.video-box , .image-box, .carousel-box {
+    position: relative;
+    width: 100%;
+    border: solid 10px #969EEE;
+    border-radius: 1.5rem;
+    background-image: url("/images/graphics/static-noise.png");
+    background-size: cover;
+    background-color: #ffffff;
+    box-shadow: -1px -1px 3px #ffffff, 1px 1px 3px #000000;
+    overflow: hidden;
+}
+
+.video-box {
+    padding-top: 54.9%;
+  /*aspect-ratio: 15.67/9;*/
+}
+
+.image-box {
+    aspect-ratio: 16/9;
+}
+
+.product-box {
+    aspect-ratio: 4/5;
+}
+
+.carousel-box {
+    aspect-ratio: 3/1;
+}
+
+.video-box::before, .image-box::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content:"";
+    box-shadow: inset 0px 0px 25px 5px #000000;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* VIDEO*/
+.video-player {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* AUDIO */
+audio {
+    display: inline-block;
+    width: 30.6%;
+    color: #ffffff;
+    border: solid 10px #969EEE;
+    border-radius: 50px;
+    margin: 1rem 1% 0 1%;
+}
+
+/* IMAGE*/
+.image-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 1
+}
+
+/* ZOOM EFFECT */
+.image-wrap {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s;
+}
+
+.image-wrap:hover {
+    transform: scale(150%);
+    transition: all 0.25s;
+}
+
+/* CAROUSEL */
+
+ .carousel-slides {
+    display: flex;
+    position: relative;
+    width: 500%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+ }
+
+ .carousel-slides input{
+    display: none;
+ }
+
+ .carousel-slide {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+ }
+
+ .carousel-nav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0;
+    z-index: 2;
+ }
+
+ .carousel-nav label {
+    display: inline-block;
+    width: 4rem;
+    height: 0.75rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #969EEE;
+    box-shadow: inset 1px 1px 3px #ffffff, 1px 1px 3px #000000;
+    border-radius: 0.25rem;
+    transition: all 0.25s;
+    cursor: pointer;
+ }
+
+ .carousel-nav label:hover {
+    background-color: #CB9AE1;
+ }
+
+#slide-1:checked ~ #nav-1 {
+    margin-left: 0;
+    transition: linear 2s;
+}
+
+#slide-2:checked ~ #nav-1 {
+    margin-left: -20%;
+    transition: linear 2s;
+}
+
+#slide-3:checked ~ #nav-1 {
+    margin-left: -40%;
+    transition: linear 2s;
+}
+
+#slide-4:checked ~ #nav-1 {
+    margin-left: -60%;
+    transition: linear 2s;
+}
+
+#slide-5:checked ~ #nav-1 {
+    margin-left: -80%;
+    transition: linear 2s;
+}
+
+@keyframes carousel {
+     0% { margin-left: 0; }
+    20% { margin-left: -20%; }
+    40% { margin-left: -40%; }
+    60% { margin-left: -60%; }
+    80% { margin-left: -80%; }
+ 
+}
+
+/* REUSABLE */
+.no-margin {
+    margin: 0;
+}
+
+
+/*
+UNITS
+  0 = nula, lze psát bez jednotky
+ px = přesný počet pixelů
+rem = 1x výchozí velikost písma dokumentu (16px)
+ em = 1x velikost písma elementu (např. 24px)
+  % = procenta z nadřazeného elementu
+ vw = procenta z šířky viewportu
+ vh = procenta z výšky viewportu
+ fr = poměr šiřek elementů v gridu
+
+FONT WEIGHT
+100
+200
+300
+400 = normal
+500
+600
+700 = bold
+800
+900
+
+HEX OPACITY
+100% — FF
+95% — F2
+90% — E6
+85% — D9
+80% — CC
+75% — BF
+70% — B3
+65% — A6
+60% — 99
+55% — 8C
+50% — 80
+45% — 73
+40% — 66
+35% — 59
+30% — 4D
+25% — 40
+20% — 33
+15% — 26
+10% — 1A
+5% — 0D
+0% — 00
+
+CLIP PATH MAKER
+https://bennettfeely.com/clippy/
+
+POSITION
+static — výchozí pozice elemntu
+relative — zarovnává se vůči výchhozí statické pozici elementu
+absolute — zarovnává se vůči pozici prvního nadřazeného elementu, který má position: relative
+fixed — upevní element na stránku, před osatní elementy (zůstává při scrollování)
+
+CENTER ELEMENT
+.element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+DARKEN BACKGROUND IMAGE
+.element {
+    background: linear-gradient(#00000080,#00000080),
+                url("images/background-image.png")
+*/

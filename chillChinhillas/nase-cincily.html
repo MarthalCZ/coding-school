@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Martin Pospíšil">
+    <title>Chill Chinchillas – naše činčily</title>
+    <link rel="icon" type="image/x-icon" href="images/logo/favicon.ico">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/lightbox.css">
+    <link rel="stylesheet" href="style/queries.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <a class="logo" href="javascript:void(0)" data-title="Nemazlit. Nemám náladu." onclick="logo()">
+                <img width="96" src="images/logo/chin-edit.png" alt="Roztomilá činčila">
+                <audio id="logo-click" src="sounds/effects/rubber-duck.mp3" preload="auto"></audio>
+            </a>
+            <a class="title" href="index.html" data-title="Zpět na hlavní stránku?"><h1>Chill Chinchillas</h1></a>
+            <p class="subtitle">nejlepší stránka o činčilách</p>
+            <div class="space"></div>
+            <nav>
+            <menu class="menu">
+                <li><a href="javascript:delay('o-cincilach.html')" onclick="select()">O činčilách</a></li>
+                <li><a href="javascript:delay('druhy-cincil.html')" onclick="select()">Druhy činčil</a></li>
+                <li><a href="javascript:delay('dorozumivani-cincil.html')" onclick="select()">Dorozumívání činčil</a></li>
+                <li><a href="javascript:delay('chov-cincil.html')" onclick="select()">Chov činčil</a></li>
+                <li><a href="javascript:delay('krmeni-cincil.html')" onclick="select()">Krmení činčil</a></li>
+                <li><a href="javascript:delay('eshop-pro-cincily.html')" onclick="select()">Eshop pro činčily</a></li>
+                <li>
+                    <search>
+                        <form id="search">
+                            <input type="search" name="search" value="" placeholder="Najít činčilu ...">
+                        </form>
+                    </search>
+                </li>
+                <li><a href="javascript:delay('nase-cincily.html')" onclick="select()">Naše činčily</a></li>
+                <li><a href="javascript:delay('kontakt.html')" onclick="select()">Kontakt</a></li>
+                <audio id="button-click" src="sounds/effects/mouse-click.mp3" preload="auto"></audio>
+                <audio id="mouse-select" src="sounds/effects/mouse-select.mp3" preload="auto"></audio>
+            </menu>
+            </nav>
+        </header>
+        <hr class="h-line">
+        <section class="article">
+            <menu class="breadcrumbs">
+                <li><a href="index.html">🏠︎</a></li>
+                <li><a href="nase-cincily.html">Naše činčily</a></li>
+            </menu>
+            <article>
+                <h2>Naše činčily</h2>
+                <h3>Kdo jsou naše činčily?</h3>
+                <p>Máme dva krásné a zlobivé činčilí kluky, jsou to bráškové. Jména dostali od chovatele a nám se líbí, takže jsme je nechali. Jsou to <b>George</b> a <b>Igor.</b> Oba ve stejné barevné mutaci hetero beige.</p>
+                <ul>
+                    <li>George je starší - narozen 13. 10. 2017</li>
+                    <li>Igorek je mladší - narozen 04. 08. 2018</li>     
+                </ul>           
+                <p>Sranda je kluky od sebe rozeznat. Igorek má trochu menší hlavičku, takže je rozeznáme ze předu. Když ale peláší a jsou vidět jen prdelky s ocásky, tak jsou k nerozeznání.</p>
+                <p>Oblíbenými pamlsky jsou: Goji, klasy prosa, ovesné vločky.</p>
+                <p>Klec jsme pro ně ručně vyráběli. Na půl ji mají rozdělenou se sousedkou, naší "hnědkou" osmačkou degu.</p>
+                <h3>Video</h3>
+                <div class="video-box">
+                    <iframe class="video-player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true">
+                    </iframe>
+                </div>
+            </article>
+        </section>
+        <section class="section">
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/our-chinchillas/george-01.jpg" data-lightbox="mygallery" data-title="Georgík">
+                        <img class="image-display" src="images/our-chinchillas/george-01.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/our-chinchillas/george-igor-01.jpg" data-lightbox="mygallery" data-title="Georgík a Igorek">
+                        <img class="image-display" src="images/our-chinchillas/george-igor-01.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/our-chinchillas/igor-01.jpg" data-lightbox="mygallery" data-title="Igorek za mlada">
+                        <img class="image-display" src="images/our-chinchillas/igor-01.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/our-chinchillas/george-04.jpg" data-lightbox="mygallery" data-title="Georgík">
+                        <img class="image-display" src="images/our-chinchillas/george-04.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/our-chinchillas/hnedka-myson-01.jpg" data-lightbox="mygallery" data-title="Hnědka a Myšon">
+                        <img class="image-display" src="images/our-chinchillas/hnedka-myson-01.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <hr class="f-line">
+        <footer class="footer">
+                <div class="social">
+                    <h2>Sledujte činčily na sociálních sítích</h2>
+                    <menu class="social-media">
+                        <li><a href="https://www.youtube.com/" target="_blank"><img src="images/social/logo-youtube.svg" alt="YouTube"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="images/social/logo-instagram.svg" alt="Instagram"></a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="images/social/logo-facebook.svg" alt="Facebook"></a></li>
+                        <li><a href="https://www.pinterest.com/" target="_blank"><img src="images/social/logo-pinterest.svg" alt="Pinterest"></a></li>
+                    </menu>
+                </div>
+                <div class="newsletter">
+                    <h2>Činčilí novinky</h2>
+                    <form action="script/mailer-odber.php" method="post" enctype="multipart/form-data">
+                        <label for="email">Přihlaste se k odběru</label>
+                        <input id="email" name="email" type="email" placeholder="zlobiva.cincila@email.cz" maxlength="64" required>
+                        <input id="subscribe" type="submit" value="Odebírat">
+                    </form>
+                </div>
+            </div>
+            <div class="chinchilla-run">
+                <div class="chinchilla-run-box">
+                    <img src="images/graphics/chinchilla-run.gif" alt="Běžící činčila">
+                </div>
+            </div>
+            <p class="copyright"><a href="o-autorovi.html">© Martin Pospíšil 2024</a></p>
+        </footer>
+    </main>
+    <div id="scroll-top-box">
+        <button id="scroll-top-btn" data-title="Zpět nahoru?" onclick="topFunction()">⭡</button>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="script/lightbox-plus-jquery.js"></script>
+    </body>
+</html>

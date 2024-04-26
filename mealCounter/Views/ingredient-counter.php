@@ -29,7 +29,7 @@
                 <span class="meal-counter__stats-energy">
                     <input class="meal-counter__stats-energy-input" id="energy" name="energy" type="number" min="0" placeholder="<?php echo $localization['energy'] ?>" aria-label="Zadejte energetickou hodnotu">
                 </span>
-                <span class="meal-counter__stats-ratio" id="ratio">0</span>
+                <span class="meal-counter__stats-ratio" id="ratio">100</span>
                 <span class="meal-counter__stats-spacer"></span>
             </div>
             <div class="my-ingredients__content">
@@ -38,11 +38,6 @@
                         <span class="ingredient-header__info ingredient-header__name"><?php echo $localization['macro'] ?></span>
                         <span class="ingredient-header__info ingredient-header__weight"><?php echo $localization['weight'] ?></span>
                         <span class="ingredient-header__info ingredient-header__energy"><?php echo $localization['energy'] ?></span>
-                    </div>
-                    <div class="ingredient-header__row ingredient-header__column--two">
-                        <span class="ingredient-header__info ingredient-header__macros"><?php echo $localization['protein'] ?></span>
-                        <span class="ingredient-header__info ingredient-header__macros"><?php echo $localization['carbs'] ?></span>
-                        <span class="ingredient-header__info ingredient-header__macros"><?php echo $localization['fat'] ?></span>
                     </div>
                     <div class="ingredient-header__row ingredient-header__column--three">
                         <span class="ingredient-header__info meal-counter-header__ratio"><?php echo $localization['ratio'] ?></span>

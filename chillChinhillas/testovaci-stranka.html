@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Martin Pospíšil">
+    <title>Chill Chinchillas – testovací stránka</title>
+    <link rel="icon" type="image/x-icon" href="images/logo/favicon.ico">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/lightbox.css">
+    <link rel="stylesheet" href="style/queries.css">
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <a class="logo" href="javascript:void(0)" data-title="Nemazlit. Nemám náladu." onclick="logo()">
+                <img width="96" src="images/logo/chin-edit.png" alt="Roztomilá činčila">
+                <audio id="logo-click" src="sounds/effects/rubber-duck.mp3" preload="auto"></audio>
+            </a>
+            <a class="title" href="index.html" data-title="Zpět na hlavní stránku?"><h1>Chill Chinchillas</h1></a>
+            <p class="subtitle">nejlepší stránka o činčilách</p>
+            <div class="space"></div>
+            <nav>
+            <menu class="menu">
+                <li><a href="javascript:delay('o-cincilach.html')" onmouseover="browse()" onclick="select()">O činčilách</a></li>
+                <li><a href="javascript:delay('druhy-cincil.html')" onmouseover="browse()" onclick="select()">Druhy činčil</a></li>
+                <li><a href="javascript:delay('dorozumivani-cincil.html')" onmouseover="browse()" onclick="select()">Dorozumívání činčil</a></li>
+                <li><a href="javascript:delay('chov-cincil.html')" onmouseover="browse()" onclick="select()">Chov činčil</a></li>
+                <li><a href="javascript:delay('krmeni-cincil.html')" onmouseover="browse()" onclick="select()">Krmení činčil</a></li>
+                <li><a href="javascript:delay('eshop-pro-cincily.html')" onmouseover="browse()" onclick="select()">Eshop pro činčily</a></li>
+                <li>
+                    <search>
+                        <form id="search">
+                            <input type="search" name="search" value="" placeholder="Najít činčilu ...">
+                        </form>
+                    </search>
+                </li>
+                <li><a href="javascript:delay('nase-cincily.html')" onmouseover="browse()" onclick="select()">Naše činčily</a></li>
+                <li><a href="javascript:delay('kontakt.html')" onmouseover="browse()" onclick="select()">Kontakt</a></li>
+                <audio id="button-click" src="sounds/effects/mouse-click.mp3" preload="auto"></audio>
+                <audio id="mouse-select" src="sounds/effects/mouse-select.mp3" preload="auto"></audio>
+            </menu>
+            </nav>
+        </header>
+        <hr class="h-line">
+        <section class="article">
+            <menu class="breadcrumbs">
+                <li><a href="index.html">🏠︎</a></li>
+                <li><a href="testovaci-stranka.html">Testovací stránka</a></li>
+            </menu>
+            <article>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo adipisci aut dolore iure nam laudantium, optio inventore eligendi perspiciatis dolores deserunt facere aperiam earum. Aut consectetur sit voluptas ullam autem.
+            </article>
+        </section>
+        <section class="section">
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/chinchillas/chinchilla-01.png" data-lightbox="mygallery" data-title="Činčila">
+                        <img class="image-display" src="images/chinchillas/chinchilla-01.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/chinchillas/chinchilla-02.png" data-lightbox="mygallery" data-title="Činčila">
+                        <img class="image-display" src="images/chinchillas/chinchilla-02.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/chinchillas/chinchilla-03.png" data-lightbox="mygallery" data-title="Činčila">
+                        <img class="image-display" src="images/chinchillas/chinchilla-03.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/chinchillas/viscacha-01.png" data-lightbox="mygallery" data-title="Viskača">
+                        <img class="image-display" src="images/chinchillas/viscacha-01.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="image-box">
+                <div class="image-wrap">
+                    <a href="images/chinchillas/viscacha-02.png" data-lightbox="mygallery" data-title="Viskača">
+                        <img class="image-display" src="images/chinchillas/viscacha-02.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <h2>Anketa</h2>
+            <form class="poll" action="mailto:martasek.pospisil@seznam.cz" subject="Chill Chinchillas: Nová recenze" method="get" enctype="multipart/form-data">
+                <label for="Druh">Jakou máte činčilu?</label>
+                <input type="radio" name="Druh" value="Domácí"><span>Domácí</span>
+                <input type="radio" name="Druh" value="Divokou"><span>Divokou</span>
+                <input type="radio" name="Druh" value="Všechny"><span>Všechny</span>
+                <label label for="Množství">Kolik máte činčil?</label>
+                <input type="number" name="Množství" value="" placeholder="0">
+                <label for="Vypouštění">Jak často ji/je vypouštíte?</label>
+                <input type="radio" name="Vypouštění" value="Denně"><span>Denně</span>
+                <input type="radio" name="Vypouštění" value="Týdně"><span>Týdně</span>
+                <input type="radio" name="Vypouštění" value="Méně"><span>Méně</span>
+                <label for="Krmení">Čím je nejčastěji krmíte?</label>
+                <input type="text" name="Krmení" value="" placeholder="seno, granule ...">
+                <input type="submit" name="Odeslat" value="Odeslat" onmouseover="browse()" onclick="select()">
+            </form>
+        </section>
+        <hr class="f-line">
+        <footer class="footer">
+                <div class="social">
+                    <h2>Sledujte činčily na sociálních sítích</h2>
+                    <menu class="social-media">
+                        <li><a href="https://www.youtube.com/" target="_blank"><img src="images/social/logo-youtube.svg" alt="YouTube"></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><img src="images/social/logo-instagram.svg" alt="Instagram"></a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank"><img src="images/social/logo-facebook.svg" alt="Facebook"></a></li>
+                        <li><a href="https://www.pinterest.com/" target="_blank"><img src="images/social/logo-pinterest.svg" alt="Pinterest"></a></li>
+                    </menu>
+                </div>
+                <div class="newsletter">
+                    <h2>Činčilí novinky</h2>
+                    <form action="script/mailer-odber.php" method="post" enctype="multipart/form-data">
+                        <label for="email">Přihlaste se k odběru</label>
+                        <input id="email" name="email" type="email" placeholder="zlobiva.cincila@email.cz" maxlength="64" required>
+                        <input id="subscribe" type="submit" value="Odebírat">
+                    </form>
+                </div>
+            </div>
+            <div class="chinchilla-run">
+                <div class="chinchilla-run-box">
+                    <img src="images/graphics/chinchilla-run.gif" alt="Běžící činčila">
+                </div>
+            </div>
+            <p class="copyright"><a href="o-autorovi.html">© Martin Pospíšil 2024</a></p>
+        </footer>
+    </main>
+    <div id="scroll-top-box">
+        <button id="scroll-top-btn" data-title="Zpět nahoru?" onclick="topFunction()">⭡</button>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="script/lightbox-plus-jquery.js"></script>
+    </body>
+</html>

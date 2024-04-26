@@ -26,7 +26,7 @@ I used these apps to work on my projects:
   - Meal Counter
  
 ## Chill Chinchillas
-A static multi-page website about Chinchillas I created using HTML, CSS and JS.  
+A static multi-page website about chinchillas I created using HTML, CSS and JS.  
 Purpose:  Practice of design layout, flexbox, grid, effects, animations, responsivity.  
 Copyright: All rights reserved.  
 

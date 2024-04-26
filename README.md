@@ -75,6 +75,7 @@ Account management:
 - user can switch localization czech/english
 - number of personal meals and ingredients
 - account can be deleted prompting password confirmation
+
 User management:
 - users must create an account to make use of the app
 - only authenticated in users can access inner parts of the app (otherwise they are redirected to login)
@@ -82,6 +83,7 @@ User management:
 - on login user data are called from DB and stored in session for further usage
 - users can only access their personal content
 - users can log out
+
 Content management:
 - user can create and delete ingredients using "ingredient counter"
 - user can create and delete meals by adding ingrediends using "meal counter"

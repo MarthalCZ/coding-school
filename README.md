@@ -26,45 +26,45 @@ I used these apps to work on my projects:
   - Meal Counter
  
 ## Chill Chinchillas
-A static multi-page website about Chinchillas I created using HTML, CSS and JS.
-Purpose:  Practice of design layout, flexbox, grid, effects, animations, responsivity.
-Copyright: All rights reserved.
+A static multi-page website about Chinchillas I created using HTML, CSS and JS.  
+Purpose:  Practice of design layout, flexbox, grid, effects, animations, responsivity.  
+Copyright: All rights reserved.  
 
 ## La Strada
-A landing page of an existing website which I tried to replicate using HTML, CSS and JS.
-Purpose: Practice of design layout, flexbox, grid, effects, responsivity.
+A landing page of an existing website which I tried to replicate using HTML, CSS and JS.  
+Purpose: Practice of design layout, flexbox, grid, effects, responsivity.  
 
 ## Notion
-A landing page of an existing website which I tried to replicate using HTML and CSS.
-Purpose: Practice of design layout, flexbox, grid, effects, responsivity.
+A landing page of an existing website which I tried to replicate using HTML and CSS.  
+Purpose: Practice of design layout, flexbox, grid, effects, responsivity.  
 
 ## Vence
-A landing page of an existing website which I tried to replicate using HTML and CSS.
-Purpose: Practice of design layout, flexbox, grid, effects, responsivity.
+A landing page of an existing website which I tried to replicate using HTML and CSS.  
+Purpose: Practice of design layout, flexbox, grid, effects, responsivity.  
 
 ## Lauch Button
-A single button created using HTMl and CSS.
-Purpose: Practice creativity and effects in button design.
+A single button created using HTMl and CSS.  
+Purpose: Practice creativity and effects in button design.  
 
 ## Guest List
-A small project created using HTML, CSS and JS.
-It is used to create a guestlist with credentials, such as name, phone number etc.
-It is possible to add and delete guests. A checkbox is added for each guest to mark attendace.
-It uses "@media print" so it is suitable for printing.
-Purpose: Practice of JS element creation, attribute setting, child appending, conditionals.
+A small project created using HTML, CSS and JS.  
+It is used to create a guestlist with credentials, such as name, phone number etc.  
+It is possible to add and delete guests. A checkbox is added for each guest to mark attendace.  
+It uses "@media print" so it is suitable for printing.  
+Purpose: Practice of JS element creation, attribute setting, child appending, conditionals.  
 
 ## To Do App
-A small incomplete project created using HTML, CSS and JS.
-Is is used to create a to-do list by adding tasks (consisting of task name and deadline).
-It is possible to add and delete tasks.
-Purpose: Practice of JS element creation, deletion, child appending, conditionals, event listeners.
+A small incomplete project created using HTML, CSS and JS.  
+Is is used to create a to-do list by adding tasks (consisting of task name and deadline).  
+It is possible to add and delete tasks.  
+Purpose: Practice of JS element creation, deletion, child appending, conditionals, event listeners.  
 
 ## Meal Counter
-My largest personal project yet. It uses HTML, CSS, JS, PHP and SQL.
-I prototyped it using Figma before starting development.
-It is built on MVC architecture and written using OOP.
-It serves as a personal meal planner for seven days.
-Purpose: Final project during my full-stack web development course.
+My largest personal project yet. It uses HTML, CSS, JS, PHP and SQL.  
+I prototyped it using Figma before starting development.  
+It is built on MVC architecture and written using OOP.  
+It serves as a personal meal planner for seven days.  
+Purpose: Final project during my full-stack web development course.  
 
 Account management:
 - display of user's registraion date
@@ -90,6 +90,6 @@ Content management:
 - articles are localized as well and dependent on user's chosen localization
 - all changes user makes are updated in session and in DB if necessary.
 
-I also made heavy use of modals for small user interactions (for instance adding an ingredient).
-This project is still under development and parts of it are incompete.
-Copyright: All rights reserved.
+I also made heavy use of modals for small user interactions (for instance adding an ingredient).  
+This project is still under development and parts of it are incompete.  
+Copyright: All rights reserved.  

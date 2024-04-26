@@ -1,5 +1,5 @@
 # Coding School
-This my personal repository used for learning purposes.
+This is my personal repository used for learning purposes.
 
 ## About
 I used these apps to work on my projects:
@@ -43,7 +43,7 @@ A landing page of an existing website which I tried to replicate using HTML and 
 Purpose: Practice of design layout, flexbox, grid, effects, responsivity.  
 
 ## Lauch Button
-A single button created using HTMl and CSS.  
+A single button created using HTML and CSS.  
 Purpose: Practice creativity and effects in button design.  
 
 ## Guest List
